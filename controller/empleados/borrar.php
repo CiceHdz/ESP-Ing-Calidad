@@ -7,7 +7,7 @@ if(isset($_POST["id_empleado"]))
 {
 
 	$stmt = $conexion->prepare(
-		"DELETE FROM empleados WHERE id_empleado = :id_empleado"
+		"EXECUTE PROC_DEL_EMPLEADO :id_empleado"
 	);
 	$resultado = $stmt->execute(
 		array(
