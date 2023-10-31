@@ -8,7 +8,7 @@ if ($_POST["operacion"] == "Crear" or $_POST["operacion"] == "Editar") {
 
     $resultado = $stmt->execute(
         array(
-            ':id_permiso'    => $_POST["id"],
+            ':id_permiso'    => $_POST["id_permiso"],
             ':id_rol'    => $_POST["id_rol"],
             ':id_modulo'    => $_POST["id_modulo"],
             ':estado_c'    => $_POST["estado_c"],

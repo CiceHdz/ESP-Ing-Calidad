@@ -140,6 +140,7 @@
                 <div class="modal-footer">
                     <!-- <input type="hidden" name="id_rol" id="id_rol">
                     <input type="hidden" name="id_modulo" id="id_modulo"> -->
+                    <input type="hidden" name="id_permiso" id="id_permiso">
                     <input type="hidden" name="operacion" id="operacion">             
                     <input type="submit" name="action" id="action" class="btn btn-success" value="Crear">
                 </div>
@@ -276,8 +277,7 @@
             
             //Aquí código inserción
             $(document).on('submit', '#formulario', function(event){
-            event.preventDefault();
-            var id_permiso = $(this).attr("id");	
+            event.preventDefault();	
             var id_rol = $('#id_rol').val();
             var id_modulo = $('#id_modulo').val();
             var estado_r = $('#estado_r').val();
@@ -346,16 +346,12 @@
                             $('#estado_dn').prop('checked', true);
                         }
 
-                        //console.log(data);				
-                        $('.modal-title').text("Editar Permisos");
-                        
+                        //console.log(data);
+                        $('#id_permiso').val(id_permiso);				
+                        $('.modal-title').text("Editar Permisos");                        
                         $('#action').val("Editar");
                         $('#operacion').val("Editar");
 
-                        
-                        // $('#id_rol').val("");
-                        // $('#id_modulo').val("");
-                        
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
