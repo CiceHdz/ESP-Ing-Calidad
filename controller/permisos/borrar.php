@@ -6,7 +6,7 @@ include("funciones.php");
 if(isset($_POST["id_permiso"]))
 {
 	$stmt = $conexion->prepare(
-		"DELETE FROM ROLES_MODULO WHERE id = :id_permiso"
+		"EXECUTE PROC_DEL_PERMISO :id_permiso"
 	);
 	$resultado = $stmt->execute(
 		array(
