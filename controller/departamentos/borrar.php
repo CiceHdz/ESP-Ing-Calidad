@@ -6,7 +6,7 @@ include("funciones.php");
 if(isset($_POST["id_depto"]))
 {
 	$stmt = $conexion->prepare(
-		"DELETE FROM departamentos WHERE id_depto = :id_depto"
+		"EXECUTE PROC_DEL_DEPARTAMENTO :id_depto"
 	);
 	$resultado = $stmt->execute(
 		array(
