@@ -11,7 +11,7 @@ if(isset($_POST["id_ausencia"]))
 		unlink("img/" . $imagen);
 	}*/
 	$stmt = $conexion->prepare(
-		"DELETE FROM AUSENCIAS WHERE id = :id_ausencia"
+		"EXECUTE PROC_DEL_AUSENCIAS :id_ausencia"
 	);
 	$resultado = $stmt->execute(
 		array(
