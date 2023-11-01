@@ -5,8 +5,9 @@ include("funciones.php");
 
 if(isset($_POST["id_rol"]))
 {
+
 	$stmt = $conexion->prepare(
-		"DELETE FROM roles WHERE id_rol = :id_rol"
+		"EXECUTE PROC_DEL_ROL :id_rol"
 	);
 	$resultado = $stmt->execute(
 		array(
@@ -19,5 +20,7 @@ if(isset($_POST["id_rol"]))
 		echo 'Registro borrado';
 	}
 }
+
+
 
 ?>
