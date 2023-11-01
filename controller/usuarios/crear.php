@@ -1,17 +1,26 @@
 <?php
 
+if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 include("../../model/conexion.php");
 include("funciones.php");
 
-if ($_POST["operacion"] == "Crear") {
+if ($_POST["operacion"] == "Crear" or $_POST["operacion"] == "Editar") {
+
     $imagen = '';
     if ($_FILES["imagen_usuario"]["name"] != '') {
         $imagen = subir_imagen();
+    } else {
+        $imagen = NULL;
     }
-    $stmt = $conexion->prepare("INSERT INTO usuarios(nombres, apellidos, email, password, id_rol, imagen, id_empleado)VALUES(:nombres, :apellidos, :email, :password, :id_rol, :imagen, :id_empleado)");
+
+    $stmt = $conexion->prepare("EXECUTE PROC_INS_UPD_USUARIOS :id_usuario, :nombres, :apellidos, :email, :password, :id_rol, :imagen, :id_empleado");
 
     $resultado = $stmt->execute(
         array(
+            ':id_usuario'    => $_POST["id_usuario"],
             ':nombres'    => $_POST["nombres"],
             ':apellidos'    => $_POST["apellidos"],
             ':email'    => $_POST["email"],
@@ -24,37 +33,10 @@ if ($_POST["operacion"] == "Crear") {
     );
 
     if (!empty($resultado)) {
-        echo 'Registro creado';
-    }
-}
-
-
-if ($_POST["operacion"] == "Editar") {
-    $imagen = '';
-    if ($_FILES["imagen_usuario"]["name"] != '') {
-        $imagen = subir_imagen();
-    }else{
-        $imagen = $_POST["imagen_usuario_oculta"];
-    }
-
-    $stmt = $conexion->prepare("UPDATE usuarios SET nombres=:nombres, apellidos=:apellidos, imagen=:imagen, email=:email, password=:password,
-                                id_rol=:id_rol, id_empleado=:id_empleado WHERE id_usuario = :id_usuario");
-
-
-    $resultado = $stmt->execute(
-        array(
-            ':nombres'    => $_POST["nombres"],
-            ':apellidos'    => $_POST["apellidos"],
-            ':email'    => $_POST["email"],
-            ':password'    => $_POST["password"],
-            ':imagen'    => $imagen,
-            ':id_rol'    => $_POST["id_rol"],      
-            ':id_empleado'    => $_POST["id_empleado"],
-            ':id_usuario'    => $_POST["id_usuario"]   
-        )
-    );
-
-    if (!empty($resultado)) {
-        echo 'Registro actualizado';
+        if ($_POST["operacion"] == "Crear") {
+            echo 'Registro creado';
+        } else {
+            echo 'Registro actualizado';
+        }
     }
 }
