@@ -266,39 +266,39 @@
 	        });
 
             //Funcionalidad de editar
-            $(document).on('click', '.editar', function(){		
-            var id_horEx = $(this).attr("id");		
-            $.ajax({
-                url:"../../controller/horasExtras/obtener_registro.php",
-                method:"POST",
-                data:{id_horEx:id_horEx},
-                dataType:"json",
-                success:function(data)
-                    {
-                        console.log(data);				
-                        $('#modalUsuario').modal('show');
-                        //$('#id_empleado').val(data.nombre);
-                        $('#fecha_horaExtra').datepicker('setDate', data.fecha); //.val(data.fecha);
-                        if (data.tipo === 'A') {
-                            $('#tipoO').prop('checked', true);
-                        } else {
-                            $('#tipoE').prop('checked', true);
-                        }
-                        $('#cantidad').val(data.cantidad);
+            $(document).on('click', '.editar', function() {
+    var id_horEx = $(this).attr("id");
+    $.ajax({
+        url: "../../controller/horasExtras/obtener_registro.php",
+        method: "POST",
+        data: { id_horEx: id_horEx },
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+            
+            // Configura el datepicker y establece la fecha
+            $('#fecha_horaExtra').datepicker({
+            dateFormat: "yy-mm-dd"
+            }).datepicker('setDate', new Date(data.fecha + 'T00:00:00'));
 
-
-                        $('#id_empleado option[value="'+data.id_empleado+'"]').attr("selected", "selected");
-                        $('.modal-title').text("Editar Horas extras");
-                        $('#id_horEx').val(id_horEx);
-                        $('#action').val("Editar");
-                        $('#operacion').val("Editar");
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus, errorThrown);
-                    }
-                })
-	        });
-
+            $('#modalUsuario').modal('show');
+            if (data.tipo === 'A') {
+                $('#tipoO').prop('checked', true);
+            } else {
+                $('#tipoE').prop('checked', true);
+            }
+            $('#cantidad').val(data.cantidad);
+            $('#id_empleado option[value="'+data.id_empleado+'"]').attr("selected", true);
+            $('.modal-title').text("Editar Horas extras");
+            $('#id_horEx').val(id_horEx);
+            $('#action').val("Editar");
+            $('#operacion').val("Editar");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+});
             //Funcionalidad de borrar
             $(document).on('click', '.borrar', function(){
                 var id_horEx = $(this).attr("id");
