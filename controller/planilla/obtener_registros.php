@@ -15,7 +15,7 @@
 
     $salida = array();
     $query = "SELECT Id_Empleado, Nombre, Fecha_Contratacion, Tiempo_Laborado, Salario, AFP, ISSS, Renta, Salario_Neto
-                FROM FN_OBT_PLANILLA() ";
+                FROM FN_OBT_PLANILLA('P') ";
     
     /*if (($_SESSION['id_rol'] == '4' || $_SESSION['id_rol'] == '5') && isset($_SESSION['id_empleado'])) {
         $query .= 'AND id_empleado = ' . $_SESSION['id_empleado'] . ' ';

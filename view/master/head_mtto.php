@@ -75,51 +75,23 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
                             ?>
                             </li>
 
-                            <?/*php 
+                            <?php 
                             include_once("../../model/conexion.php");
-                            $query = "SELECT id id_tipo_contrato, nombre FROM tipos_contrato ";
+                            if (isset($_SESSION) && ($_SESSION['id_rol'] == '1')) {
+                                $query = "SELECT nombre, ruta, tab_name FROM MODULOS m ORDER BY id asc";
+                            } else {
+                                $query = "SELECT nombre, ruta, tab_name FROM MODULOS m WHERE m.id in (select r.ID_MODULO from ROLES_MODULO r where ID_ROL = ".$_SESSION['id_rol']." and PUEDE_CONSULTAR = 'S') ORDER BY id asc";
+                            }
+                            
                             $stmt = $conexion->prepare($query);
                             $stmt->execute();
                             $resultado = $stmt->fetchAll();
                             $datos = array();
                             $filtered_rows = $stmt->rowCount();
                             foreach($resultado as $fila){
-                                $id_tipo_contrato = $fila["id_tipo_contrato"];
-                                $nombre = $fila["nombre"];
-
-                                echo '<li class="nav-item"><a class="nav-link" id="tab_planilla" href="../planilla/index.php">Planilla</a></li>';
+                                echo '<li class="nav-item"><a class="nav-link" id="'.$fila["tab_name"].'" href="'.$fila["ruta"].'">'.$fila["nombre"].'</a></li>';
                             }
-                            */?>
-                            
-                            <?php
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_planilla" href="../planilla/index.php">Planilla</a></li>';
-                                }
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_costeo" href="../costeo/index.php">Costos</a></li>';
-                                }
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_ausencias" href="../ausencias/index.php">Ausencias</a></li>';
-                                }
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_deptos" href="../departamentos/index.php">Áreas</a></li>';
-                                }
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_empleados" href="../empleados/index.php">Empleados</a></li>';
-                                }
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '4')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_usuarios" href="../usuarios/index.php">Usuarios</a></li>
-                                    <li class="nav-item"><a class="nav-link" id="tab_roles" href="../roles/index.php">Permisos</a></li>'
-                                    ;
-                                }
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_indem" href="../planilla/indemnizaciones.php">Indemnizaciones</a></li>';
-                                }
-                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
-                                    echo '<li class="nav-item"><a class="nav-link" id="tab_permisos" href="../permisos/index.php">Asignación de Permisos</a></li>';
-                                }
                             ?>
-
                             <li class="nav-item"><a class="nav-link" href="../../logout.php">Cerrar Sesión</a></li>
                         </ul>
                     
