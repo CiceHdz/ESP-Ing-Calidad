@@ -3,14 +3,14 @@
 include("../../model/conexion.php");
 include("funciones.php");
 
-if(isset($_POST["id_depto"]))
+if(isset($_POST["id_permiso"]))
 {
 	$stmt = $conexion->prepare(
-		"EXECUTE PROC_DEL_DEPARTAMENTO :id_depto"
+		"EXECUTE PROC_DEL_PERMISO :id_permiso"
 	);
 	$resultado = $stmt->execute(
 		array(
-			':id_depto'	=>	$_POST["id_depto"]
+			':id_permiso'	=>	$_POST["id_permiso"]
 		)
 	);
 	

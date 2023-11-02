@@ -3,14 +3,15 @@
 include("../../model/conexion.php");
 include("funciones.php");
 
-if(isset($_POST["id_depto"]))
+if(isset($_POST["id_prestacion"]))
 {
+
 	$stmt = $conexion->prepare(
-		"EXECUTE PROC_DEL_DEPARTAMENTO :id_depto"
+		"EXECUTE PROC_DEL_PRESTACION :id_prestacion"
 	);
 	$resultado = $stmt->execute(
 		array(
-			':id_depto'	=>	$_POST["id_depto"]
+			':id_prestacion'	=>	$_POST["id_prestacion"]
 		)
 	);
 	
@@ -19,5 +20,7 @@ if(isset($_POST["id_depto"]))
 		echo 'Registro borrado';
 	}
 }
+
+
 
 ?>

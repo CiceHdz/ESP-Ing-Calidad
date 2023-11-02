@@ -5,13 +5,9 @@ include("funciones.php");
 
 if(isset($_POST["id_usuario"]))
 {
-	$imagen = obtener_nombre_imagen($_POST["id_usuario"]);
-	if($imagen != '')
-	{
-		unlink("img/" . $imagen);
-	}
+
 	$stmt = $conexion->prepare(
-		"DELETE FROM usuarios WHERE id_usuario = :id_usuario"
+		"EXECUTE PROC_DEL_USUARIO :id_usuario"
 	);
 	$resultado = $stmt->execute(
 		array(
