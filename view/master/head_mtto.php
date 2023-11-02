@@ -74,6 +74,22 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
                                 }*/
                             ?>
                             </li>
+
+                            <?/*php 
+                            include_once("../../model/conexion.php");
+                            $query = "SELECT id id_tipo_contrato, nombre FROM tipos_contrato ";
+                            $stmt = $conexion->prepare($query);
+                            $stmt->execute();
+                            $resultado = $stmt->fetchAll();
+                            $datos = array();
+                            $filtered_rows = $stmt->rowCount();
+                            foreach($resultado as $fila){
+                                $id_tipo_contrato = $fila["id_tipo_contrato"];
+                                $nombre = $fila["nombre"];
+
+                                echo '<li class="nav-item"><a class="nav-link" id="tab_planilla" href="../planilla/index.php">Planilla</a></li>';
+                            }
+                            */?>
                             
                             <?php
                                 if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
