@@ -74,6 +74,7 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
                                 }*/
                             ?>
                             </li>
+
                             
                             <?php
                                 if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
@@ -108,6 +109,23 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
                                 }
                             ?>
 
+                            <?php 
+                            include_once("../../model/conexion.php");
+                            if (isset($_SESSION) && ($_SESSION['id_rol'] == '1')) {
+                                $query = "SELECT nombre, ruta, tab_name FROM MODULOS m ORDER BY id asc";
+                            } else {
+                                $query = "SELECT nombre, ruta, tab_name FROM MODULOS m WHERE m.id in (select r.ID_MODULO from ROLES_MODULO r where ID_ROL = ".$_SESSION['id_rol']." and PUEDE_CONSULTAR = 'S') ORDER BY id asc";
+                            }
+                            
+                            $stmt = $conexion->prepare($query);
+                            $stmt->execute();
+                            $resultado = $stmt->fetchAll();
+                            $datos = array();
+                            $filtered_rows = $stmt->rowCount();
+                            foreach($resultado as $fila){
+                                echo '<li class="nav-item"><a class="nav-link" id="'.$fila["tab_name"].'" href="'.$fila["ruta"].'">'.$fila["nombre"].'</a></li>';
+                            }
+                            ?>
                             <li class="nav-item"><a class="nav-link" href="../../logout.php">Cerrar Sesión</a></li>
                         </ul>
                     

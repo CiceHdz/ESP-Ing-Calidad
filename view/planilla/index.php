@@ -20,8 +20,6 @@
                     <th>AFP</th>
                     <th>ISSS</th>
                     <th>Renta</th>
-                    <th>Aguinaldo</th>
-                    <th>Vacaciones</th>
                     <th>Salario neto</th>
                     <th>Boleta</th>
                 </tr>
@@ -72,7 +70,7 @@
                         text: '<i class="fa fa-plus-circle" aria-hidden="true"></i> Copiar',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
                         }
                     },
                     {
@@ -80,7 +78,7 @@
                         text: '<i class="fa fa-file-excel" aria-hidden="true"></i> Excel',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
                         }
                     },
                     {
@@ -88,7 +86,7 @@
                         text: '<i class="fa fa-file-csv" aria-hidden="true"></i> CSV',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
                         }
                     },
                     {
@@ -96,7 +94,7 @@
                         text: '<i class="fa fa-file-pdf" aria-hidden="true"></i> PDF',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
                         }
                     },
                     {
