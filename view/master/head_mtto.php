@@ -99,6 +99,10 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
                                 if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
                                     echo '<li class="nav-item"><a class="nav-link" id="tab_indem" href="../planilla/indemnizaciones.php">Indemnizaciones</a></li>';
                                 }
+
+                                if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
+                                    echo '<li class="nav-item"><a class="nav-link" id="tab_horExtra" href="../horasExtras/index.php">Horas Extras</a></li>';
+                                }
                                 if (isset($_SESSION) && ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '2' || $_SESSION['id_rol'] == '3')) {
                                     echo '<li class="nav-item"><a class="nav-link" id="tab_permisos" href="../permisos/index.php">Asignación de Permisos</a></li>';
                                 }
