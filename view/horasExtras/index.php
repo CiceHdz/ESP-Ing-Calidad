@@ -152,7 +152,7 @@
                         text: '<i class="fa fa-plus-circle" aria-hidden="true"></i> Copiar',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4 ]
                         }
                     },
                     {
@@ -160,7 +160,7 @@
                         text: '<i class="fa fa-file-excel" aria-hidden="true"></i> Excel',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4 ]
                         }
                     },
                     {
@@ -168,7 +168,7 @@
                         text: '<i class="fa fa-file-csv" aria-hidden="true"></i> CSV',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4 ]
                         }
                     },
                     {
@@ -176,7 +176,7 @@
                         text: '<i class="fa fa-file-pdf" aria-hidden="true"></i> PDF',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4 ]
                         }
                     }
                 ],
