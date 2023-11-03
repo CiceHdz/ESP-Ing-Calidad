@@ -96,7 +96,7 @@
                     <br />
 
                     <label for="salario">Ingrese el salario:</label>
-                    <input type="number" step="any" min="0.01" max="999999999999999.99" maxlength="18" name="salario" id="salario" class="form-control" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?> required>
+                    <input type="number" step="any" min="0.01" max="999999999999999.99" maxlength="18" name="salario" id="salario" class="form-control" required>
                     <br />
 
                     <label for="id_tipo_contrato">Seleccione el tipo de contrato:&nbsp;</label>
@@ -122,33 +122,33 @@
                     
                     <label for="estado">Estado de empleado:&nbsp;</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="estado" id="estadoA" value="A" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?>  checked>
+                            <input class="form-check-input" type="radio" name="estado" id="estadoA" value="A"  checked />
                             <label class="form-check-label" for="estado1">En Contrato</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="estado" id="estadoI" value="I" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?> >
+                            <input class="form-check-input" type="radio" name="estado" id="estadoI" value="I" />
                             <label class="form-check-label" for="estado2">Fuera Servicio</label>
                         </div>
                     <br />
 
                     <label for="tipo_salida">Tipo de salida:&nbsp;</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipo_salida" id="tipo_salidaR" value="R" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?>  checked>
+                            <input class="form-check-input" type="radio" name="tipo_salida" id="tipo_salidaR" value="R" checked />
                             <label class="form-check-label" for="tipo_salida1">Renuncia</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipo_salida" id="tipo_salidaD" value="D" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?> >
+                            <input class="form-check-input" type="radio" name="tipo_salida" id="tipo_salidaD" value="D" />
                             <label class="form-check-label" for="tipo_salida2">Despido</label>
                         </div>
                     <br />
 
                     <label for="estado_indem">Estado de indemnización:&nbsp;</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="estado_indem" id="estado_indemP" value="P" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?> checked>
+                            <input class="form-check-input" type="radio" name="estado_indem" id="estado_indemP" value="P" checked />
                             <label class="form-check-label" for="estado_indem2">Pendiente</label>
                         </div>    
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="estado_indem" id="estado_indemL" value="L" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?>  >
+                            <input class="form-check-input" type="radio" name="estado_indem" id="estado_indemL" value="L" />
                             <label class="form-check-label" for="estado_indem1">Pagada</label>
                         </div>
                     <br />
