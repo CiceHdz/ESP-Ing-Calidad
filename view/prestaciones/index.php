@@ -13,7 +13,7 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Porcentaje</th>
-                        <th>Monto</th>
+                        <th>Monto Fijo</th>
                         <th>Techo Inferior</th>
                         <th>Techo Superior</th>
                         <th>Estado</th>
@@ -46,8 +46,8 @@
                     <input type="number" step="any" min="0.01" max="100" name="porcentaje" id="porcentaje" class="form-control" required>
                     <br />
 
-                    <label for="monto">Ingrese el monto:</label>
-                    <input type="number" step="any" min="0.01" max="9999.99" name="monto" id="monto" class="form-control" required>
+                    <label for="monto">Ingrese el monto fijo:</label>
+                    <input type="number" step="any" min="0.00" max="9999.99" name="monto" id="monto" class="form-control" required>
                     <br />
 
                     <label for="techo_inferior">Ingrese el techo inferior:</label>
@@ -55,7 +55,7 @@
                     <br />
                     
                     <label for="techo_superior">Ingrese el techo superior:</label>
-                    <input type="number" step="any" min="0.01" max="9999.99" name="techo_superior" id="techo_superior" class="form-control" required>
+                    <input type="number" step="any" min="0.01" max="99999.99" name="techo_superior" id="techo_superior" class="form-control" required>
                     <br />
 
                     <label for="estado">Estado de prestación:&nbsp;</label>
@@ -126,7 +126,7 @@
                         text: '<i class="fa fa-plus-circle" aria-hidden="true"></i> Copiar',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     },
                     {
@@ -134,7 +134,7 @@
                         text: '<i class="fa fa-file-excel" aria-hidden="true"></i> Excel',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     },
                     {
@@ -142,7 +142,7 @@
                         text: '<i class="fa fa-file-csv" aria-hidden="true"></i> CSV',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     },
                     {
@@ -150,7 +150,7 @@
                         text: '<i class="fa fa-file-pdf" aria-hidden="true"></i> PDF',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     }
                 ],
