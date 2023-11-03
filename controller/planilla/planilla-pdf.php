@@ -47,7 +47,8 @@ $query = "SELECT id_empleado, nombres, apellidos, cargo, fecha_ingreso, salario,
                     CONVERT(datetime, '12/12/2022', 103) fec_calc_act,
                     DATEDIFF(day, CONVERT(datetime, '12/12/2022', 103), fecha_ingreso) AS dias_desde_ing,
                     DATEDIFF(day, CONVERT(datetime, '12/12/2022', 103), CONVERT(datetime, '12/12/2021', 103)) AS dias_desde_calc_ant,
-                    (select count(*) from descuentos d where d.id_empleado = emp.id_empleado) descuento
+                    (select count(*) from descuentos d where d.id_empleado = emp.id_empleado) descuento,
+                    dbo.FN_OBT_PAGO_HORAS_EXTRA (id_empleado, salario) horas_extra
                     FROM empleados emp where estado = 'A'";
 
 if (isset($_GET['id'])) {
@@ -206,6 +207,8 @@ foreach($resultado as $fila){
 
         $salarioNeto = round($salarioNeto - $renta, 2);
 
+        $horas_extra = $fila["horas_extra"];
+
         // = "$".number_format(round($salarioNeto, 2), 2);
 
         // = '<button class="btn btn-success btn-sm" onclick="return genBoleta('.$fila["id_empleado"].');"><i class="fa fa-file-pdf" aria-hidden="true"></i> Descargar</button>';
@@ -243,7 +246,7 @@ foreach($resultado as $fila){
         $pdf->Ln();
 
         $pdf->Cell(45,5,'Horas Extra:');
-        $pdf->Cell(40,5,convertTexto(''));
+        $pdf->Cell(40,5,convertTexto("$".number_format($horas_extra,2)));
 
         if (isset($fila["descuento"])) {
             $descuentos = round($salarioBase/30, 2) * $fila["descuento"];
@@ -265,14 +268,14 @@ foreach($resultado as $fila){
         $pdf->Ln(20);
         
         $pdf->Cell(45,5,'TOTAL DE INGRESOS (A):');
-        $pdf->Cell(40,5,convertTexto("$".number_format(round($salarioBase, 2), 2)));
+        $pdf->Cell(40,5,convertTexto("$".number_format(round($salarioBase + $horas_extra, 2), 2)));
 
         $pdf->Cell(45,5,'TOTAL DEDUCCIONES (B):');
         $pdf->Cell(40,5,convertTexto("$".number_format(round($salarioBase - $salarioNeto, 2), 2)));
         $pdf->Ln(10);
 
         $pdf->SetFont('Arial','B',10);
-        $pdf->Cell(170,5,convertTexto("LIQUIDO A RECIBIR (A-B): $".number_format(round($salarioNeto, 2), 2)), 0, 0, 'C');
+        $pdf->Cell(170,5,convertTexto("LIQUIDO A RECIBIR (A-B): $".number_format(round($salarioNeto + $horas_extra, 2), 2)), 0, 0, 'C');
         $pdf->Ln(20);
 
         // Set font and color for text
