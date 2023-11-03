@@ -1,5 +1,6 @@
 <?php
 ob_start();
+include("../../model/conexion.php");
 require('../fpdf185/fpdf.php');
 
 class PDF extends FPDF
@@ -39,7 +40,7 @@ function convertTexto($text) {
 }
 
 // Connect to database
-$conn = mysqli_connect('localhost', 'root', '', 'rrhh');
+//$conn = mysqli_connect('localhost', 'root', '', 'rrhh');
 
 // Select data from table
 $query = "SELECT id_empleado, nombres, apellidos, cargo, fecha_ingreso, salario, (select depto.nombre from departamentos depto where depto.id_depto = emp.id_depto) area,
@@ -54,14 +55,18 @@ if (isset($_GET['id'])) {
     $query .= " and id_empleado = " . $_GET['id'];
 }
 
-$result = mysqli_query($conn, $query);
+$stmt = $conexion->prepare($query);
+$stmt->execute();
+$resultado = $stmt->fetchAll();
+$datos = array();
+$filtered_rows = $stmt->rowCount();
 
 // Initialize PDF object
 $pdf = new PDF();
 $pdf->AliasNbPages();
 
 // Output data from table
-while($fila = mysqli_fetch_array($result)) {
+foreach($resultado as $fila){
     $pdf->AddPage();
 
     // Set font and color for text

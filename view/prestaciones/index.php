@@ -43,7 +43,7 @@
                     <br />
 
                     <label for="porcentaje">Ingrese el porcentaje</label>
-                    <input type="number" step="any" min="0.01" max="100" name="porcentaje" id="porcentaje" class="form-control" required>
+                    <input type="number" step="any" min="0.00" max="100" name="porcentaje" id="porcentaje" class="form-control" required>
                     <br />
 
                     <label for="monto">Ingrese el monto fijo:</label>
