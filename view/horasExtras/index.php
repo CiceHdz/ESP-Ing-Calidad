@@ -71,17 +71,17 @@
                     
                     <label for="tipo">Tipo de horas:&nbsp;</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipo" id="tipoO" value="O" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?>  checked>
+                            <input class="form-check-input" type="radio" name="tipo" id="tipoO" value="O" checked />
                             <label class="form-check-label" for="tipo1">Ordinarias</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipo" id="tipoE" value="E" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?> >
+                            <input class="form-check-input" type="radio" name="tipo" id="tipoE" value="E" />
                             <label class="form-check-label" for="estado2">Extra Ordinarias</label>
                         </div>
                     <br />
 
                     <label for="cantidad">Ingrese la cantidad de horas:</label>
-                    <input type="number" step="any" min="0.01" max="999999999999999.99" maxlength="18" name="cantidad" id="cantidad" class="form-control" <?php echo (isset($_SESSION) && $_SESSION['id_rol'] != '3') ? 'disabled' : ''; ?> required>
+                    <input type="number" step="any" min="0.01" max="999999999999999.99" maxlength="18" name="cantidad" id="cantidad" class="form-control" required>
                     <br />
                     
                 </div>
@@ -282,7 +282,7 @@
             }).datepicker('setDate', new Date(data.fecha + 'T00:00:00'));
 
             $('#modalUsuario').modal('show');
-            if (data.tipo === 'A') {
+            if (data.tipo === 'O') {
                 $('#tipoO').prop('checked', true);
             } else {
                 $('#tipoE').prop('checked', true);
