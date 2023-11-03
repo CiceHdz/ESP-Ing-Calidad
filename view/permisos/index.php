@@ -10,13 +10,13 @@
             <table id="datos_usuario" class="table table-bordered table-striped table-sm">
                 <thead>
                     <tr>
-                        <th>ID permiso</th>
+                        <th>ID</th>
                         <th>Rol</th>
-                        <th>Modulo</th>
-                        <th>Puede consultar</th>
-                        <th>Puede insertar</th>
-                        <th>Puede actualizar</th>
-                        <th>Puede eliminar</th>
+                        <th>Módulo</th>
+                        <th>Consulta</th>
+                        <th>Inserción</th>
+                        <th>Actualización</th>
+                        <th>Eliminación</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -195,7 +195,7 @@
                         text: '<i class="fa fa-plus-circle" aria-hidden="true"></i> Copiar',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     },
                     {
@@ -203,7 +203,7 @@
                         text: '<i class="fa fa-file-excel" aria-hidden="true"></i> Excel',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     },
                     {
@@ -211,7 +211,7 @@
                         text: '<i class="fa fa-file-csv" aria-hidden="true"></i> CSV',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     },
                     {
@@ -219,7 +219,7 @@
                         text: '<i class="fa fa-file-pdf" aria-hidden="true"></i> PDF',
                         className: 'btn btn-primary btn-sm',
                         exportOptions: {
-                            columns: [ 0, 1, 2 ]
+                            columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                         }
                     }
                 ],
