@@ -241,7 +241,7 @@
             //Aquí código inserción
             $(document).on('submit', '#formulario', function(event){
             event.preventDefault();
-            var fecha = $("[name='fecha']").val();
+            var fecha = $('#fecha').val();
             var id_empleado = $('#id_empleado').val();   
             var comentario = $('#comentario').val();
             var tipo = $('#tipo').val();
