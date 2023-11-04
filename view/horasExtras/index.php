@@ -72,11 +72,11 @@
                     <label for="tipo">Tipo de horas:&nbsp;</label>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="tipo" id="tipoO" value="O" checked />
-                            <label class="form-check-label" for="tipo1">Ordinarias</label>
+                            <label class="form-check-label" for="tipo1">Diurna</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="tipo" id="tipoE" value="E" />
-                            <label class="form-check-label" for="estado2">Extra Ordinarias</label>
+                            <label class="form-check-label" for="estado2">Nocturna</label>
                         </div>
                     <br />
 
