@@ -96,7 +96,7 @@
                     <br />
 
                     <label for="salario">Ingrese el salario:</label>
-                    <input type="number" step="any" min="0.01" max="999999999999999.99" maxlength="18" name="salario" id="salario" class="form-control" required>
+                    <input type="number" step="any" min="365.0" max="999999999999999.99" maxlength="18" name="salario" id="salario" class="form-control" required>
                     <br />
 
                     <label for="id_tipo_contrato">Seleccione el tipo de contrato:&nbsp;</label>
