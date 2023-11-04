@@ -5,7 +5,7 @@
 
     $query = "";
     $salida = array();
-    $query = "SELECT id, FORMAT(fecha, 'yyyy-MM-dd') fecha, CASE tipo WHEN 'O' THEN 'Ordinarias' ELSE 'Extra Ordinarias' END tipo, cantidad, (select (E.nombres + ' ' + E.apellidos) from empleados E where E.id_empleado = HR.id_empleado) id_empleado FROM HORAS_EXTRA HR ";
+    $query = "SELECT id, FORMAT(fecha, 'yyyy-MM-dd') fecha, CASE tipo WHEN 'O' THEN 'Diurna' ELSE 'Nocturna' END tipo, cantidad, (select (E.nombres + ' ' + E.apellidos) from empleados E where E.id_empleado = HR.id_empleado) id_empleado FROM HORAS_EXTRA HR ";
 
     $stmt = $conexion->prepare($query);
     $stmt->execute();
