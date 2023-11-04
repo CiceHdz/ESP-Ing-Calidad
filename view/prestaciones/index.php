@@ -220,23 +220,24 @@
             var estado = $('#estado').val();
 		    if(nombre != '' && porcentaje != '' && monto != '' && techo_inferior != '' && techo_superior != '' && estado != '')
                 {
-                    $.ajax({
-                        url:"../../controller/prestaciones/crear.php",
-                        method:'POST',
-                        data:new FormData(this),
-                        contentType:false,
-                        processData:false,
-                        success:function(data)
-                        {
-                            alert(data);
-                            $('#formulario')[0].reset();
-                            $('#modalUsuario').modal('hide');
-                            dataTable.ajax.reload();
-                        }
-                    });
-                }
-                else
-                {
+                    if (techo_superior > techo_inferior) { // Comprueba que techo_superior sea mayor que techo_inferior
+                        $.ajax({
+                            url:"../../controller/prestaciones/crear.php",
+                            method:'POST',
+                            data:new FormData(this),
+                            contentType:false,
+                            processData:false,
+                            success:function(data)
+                            {
+                                alert(data);
+                                $('#formulario')[0].reset();
+                                $('#modalUsuario').modal('hide');
+                                dataTable.ajax.reload();
+                            }
+                        });
+                        } else { alert("El valor del techo superior debe ser mayor que el techo inferior.");}
+                    }
+                    else {
                     alert("Todos los campos son obligatorios");
                 }
 	        });
