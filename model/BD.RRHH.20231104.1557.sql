@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [rrhh]    Script Date: 11/2/2023 11:26:10 PM ******/
+/****** Object:  Database [rrhh]    Script Date: 11/4/2023 3:56:10 PM ******/
 CREATE DATABASE [rrhh]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [rrhh] SET QUERY_STORE = OFF
 GO
 USE [rrhh]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AFP_LABORAL]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AFP_LABORAL]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +94,7 @@ BEGIN
 	RETURN (@SALARIO_BASE * 0.0725);
 END;
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AFP_PATRONAL]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AFP_PATRONAL]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,7 +107,7 @@ BEGIN
 	RETURN (@SALARIO_BASE * 0.0775);
 END;
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AGUINALDO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AGUINALDO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -136,7 +136,7 @@ END
 
 -- SELECT CAST('2023-12-12' AS DATE) - CAST('2020-01-01' AS DATE)
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ANHOS_TRABAJADOS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ANHOS_TRABAJADOS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -157,7 +157,7 @@ BEGIN
     RETURN CAST(@anios AS VARCHAR(2)) + ' año(s) y ' + CAST(@meses AS VARCHAR(2)) + ' mes(es)'
 END
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ISSS_LABORAL]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ISSS_LABORAL]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -178,7 +178,7 @@ BEGIN
 	RETURN @MONTO_ISSS;
 END;
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ISSS_PATRONAL]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ISSS_PATRONAL]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -199,7 +199,7 @@ BEGIN
 	RETURN @MONTO_ISSS;
 END
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_MONTO_RENTA]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_MONTO_RENTA]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -219,7 +219,7 @@ BEGIN
 	RETURN @MONTO_RENTA;
 END;
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PAGO_HORAS_EXTRA]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PAGO_HORAS_EXTRA]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -261,7 +261,7 @@ END
 
 -- select (700 / 30 / 8)
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PLANILLA]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PLANILLA]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -363,7 +363,7 @@ BEGIN
   RETURN
 END
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_TIEMPO_TRABAJADO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_TIEMPO_TRABAJADO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -432,7 +432,7 @@ END
 -- SELECT [dbo].[FN_OBT_TIEMPO_TRABAJADO] ('04/10/2023')
 -- SELECT DATEDIFF(DAY, '10/04/2023', GETDATE())
 GO
-/****** Object:  Table [dbo].[HORAS_EXTRA]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[HORAS_EXTRA]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -449,7 +449,7 @@ CREATE TABLE [dbo].[HORAS_EXTRA](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_HORASEXTRA]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_HORASEXTRA]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -460,7 +460,7 @@ AS
 RETURN
 	SELECT TOP 1 ID, FECHA, TIPO, CANTIDAD, ID_EMPLEADO FROM HORAS_EXTRA WHERE ID = @id_horaExtra
 GO
-/****** Object:  Table [dbo].[AUSENCIAS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[AUSENCIAS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -477,7 +477,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AUSENCIA]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_AUSENCIA]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -488,7 +488,7 @@ AS
 RETURN
     SELECT top 1 id, FORMAT(fecha, 'dd/MM/yyyy') fecha, tipo, comentario, id_empleado FROM AUSENCIAS WHERE id = @ID_AUSENCIA;
 GO
-/****** Object:  Table [dbo].[roles]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[roles]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -503,7 +503,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ROL]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_ROL]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -514,7 +514,7 @@ AS
 RETURN
     SELECT TOP 1 id_rol, nombre, estado FROM roles WHERE id_rol = @ID_ROL;
 GO
-/****** Object:  Table [dbo].[departamentos]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[departamentos]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -529,7 +529,7 @@ CREATE TABLE [dbo].[departamentos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_DEPARTAMENTO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_DEPARTAMENTO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -540,7 +540,7 @@ AS
 RETURN
     SELECT TOP 1 id_depto, nombre, estado FROM departamentos WHERE id_depto = @ID_DEPTO;
 GO
-/****** Object:  Table [dbo].[usuarios]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[usuarios]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -561,7 +561,7 @@ CREATE TABLE [dbo].[usuarios](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_USUARIO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_USUARIO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -572,7 +572,7 @@ AS
 RETURN
     SELECT TOP 1 id_usuario, nombres, apellidos, imagen, id_rol, email, password, fecha_creacion, id_empleado FROM usuarios WHERE id_usuario = @ID_USUARIO;
 GO
-/****** Object:  Table [dbo].[empleados]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[empleados]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -596,7 +596,7 @@ CREATE TABLE [dbo].[empleados](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_EMPLEADO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_EMPLEADO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -607,7 +607,7 @@ AS
 RETURN
     SELECT id_empleado, nombres, apellidos, cargo, FORMAT(fecha_ingreso, 'dd/MM/yyyy') fecha_ingreso, FORMAT(fecha_salida, 'dd/MM/yyyy') fecha_salida, salario, estado, id_depto, tipo_salida, estado_indem, id_tipo_contrato FROM empleados WHERE id_empleado = @ID_EMPLEADO;
 GO
-/****** Object:  Table [dbo].[ROLES_MODULO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[ROLES_MODULO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -619,14 +619,14 @@ CREATE TABLE [dbo].[ROLES_MODULO](
 	[PUEDE_ACTUALIZAR] [char](1) NOT NULL,
 	[PUEDE_ELIMINAR] [char](1) NOT NULL,
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[PUEDE_CONSULTAR] [char](1) NULL,
-PRIMARY KEY CLUSTERED 
+	[PUEDE_CONSULTAR] [char](1) NOT NULL,
+ CONSTRAINT [PK__ROLES_MO__3213E83F85455E00] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PERMISO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PERMISO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -637,7 +637,7 @@ AS
 RETURN
 	SELECT id, ID_ROL, ID_MODULO, PUEDE_INSERTAR, PUEDE_ACTUALIZAR, PUEDE_ELIMINAR, PUEDE_CONSULTAR FROM ROLES_MODULO WHERE id = @id_permiso
 GO
-/****** Object:  Table [dbo].[PRESTACIONES]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[PRESTACIONES]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -656,7 +656,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PRESTACION]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_PRESTACION]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -668,7 +668,7 @@ RETURN
     SELECT TOP 1 id_prestacion, nombre, porcentaje, monto, techo_inferior, techo_superior, estado FROM PRESTACIONES WHERE id_prestacion = @ID_PRESTACION;
 
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_OBT_MESES_TRABAJADOS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_OBT_MESES_TRABAJADOS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -680,7 +680,7 @@ AS
 RETURN
     SELECT DATEDIFF(MONTH, CONVERT(datetime, @FECHA_INGRESO, 103), CONVERT(datetime, GETDATE(), 103)) AS meses_trabajados
 GO
-/****** Object:  Table [dbo].[descuentos]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[descuentos]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -695,7 +695,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MODULOS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[MODULOS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -712,7 +712,7 @@ CREATE TABLE [dbo].[MODULOS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PRESTACIONES_TIPO_CONT]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[PRESTACIONES_TIPO_CONT]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -722,7 +722,7 @@ CREATE TABLE [dbo].[PRESTACIONES_TIPO_CONT](
 	[id_prestacion] [int] NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TIPOS_CONTRATO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  Table [dbo].[TIPOS_CONTRATO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -741,6 +741,8 @@ SET IDENTITY_INSERT [dbo].[AUSENCIAS] ON
 GO
 INSERT [dbo].[AUSENCIAS] ([id], [fecha], [id_empleado], [comentario], [tipo]) VALUES (1, CAST(N'2023-10-04' AS Date), 6, N'Prueba', N'P')
 GO
+INSERT [dbo].[AUSENCIAS] ([id], [fecha], [id_empleado], [comentario], [tipo]) VALUES (2, CAST(N'2023-11-02' AS Date), 6, N'Prueba', N'A')
+GO
 SET IDENTITY_INSERT [dbo].[AUSENCIAS] OFF
 GO
 SET IDENTITY_INSERT [dbo].[departamentos] ON 
@@ -751,17 +753,23 @@ SET IDENTITY_INSERT [dbo].[departamentos] OFF
 GO
 SET IDENTITY_INSERT [dbo].[empleados] ON 
 GO
-INSERT [dbo].[empleados] ([id_empleado], [nombres], [apellidos], [cargo], [fecha_ingreso], [fecha_salida], [salario], [estado], [id_depto], [tipo_salida], [estado_indem], [id_tipo_contrato]) VALUES (6, N'Kevin', N'Núñez', N'Asistente', CAST(N'2021-07-23' AS Date), CAST(N'1900-01-01' AS Date), CAST(800 AS Decimal(10, 0)), N'A', 1, N'R', N'P', 1)
+INSERT [dbo].[empleados] ([id_empleado], [nombres], [apellidos], [cargo], [fecha_ingreso], [fecha_salida], [salario], [estado], [id_depto], [tipo_salida], [estado_indem], [id_tipo_contrato]) VALUES (6, N'Kevin', N'Núñez', N'Asistente', CAST(N'2021-07-23' AS Date), CAST(N'1900-01-01' AS Date), CAST(800 AS Decimal(10, 0)), N'A', 1, N'D', N'P', 1)
 GO
-INSERT [dbo].[empleados] ([id_empleado], [nombres], [apellidos], [cargo], [fecha_ingreso], [fecha_salida], [salario], [estado], [id_depto], [tipo_salida], [estado_indem], [id_tipo_contrato]) VALUES (8, N'Cicely', N'Hernández', N'Soporte', CAST(N'2015-09-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(2000 AS Decimal(10, 0)), N'I', 1, N'R', N'P', 1)
+INSERT [dbo].[empleados] ([id_empleado], [nombres], [apellidos], [cargo], [fecha_ingreso], [fecha_salida], [salario], [estado], [id_depto], [tipo_salida], [estado_indem], [id_tipo_contrato]) VALUES (8, N'Cicely', N'Hernández', N'Soporte', CAST(N'2015-09-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(2000 AS Decimal(10, 0)), N'I', 1, N'D', N'L', 1)
 GO
 INSERT [dbo].[empleados] ([id_empleado], [nombres], [apellidos], [cargo], [fecha_ingreso], [fecha_salida], [salario], [estado], [id_depto], [tipo_salida], [estado_indem], [id_tipo_contrato]) VALUES (9, N'Erick', N'Hernández', N'Recursos Humanos', CAST(N'2021-02-03' AS Date), CAST(N'1900-01-01' AS Date), CAST(1200 AS Decimal(10, 0)), N'A', 1, N'R', N'P', 1)
+GO
+INSERT [dbo].[empleados] ([id_empleado], [nombres], [apellidos], [cargo], [fecha_ingreso], [fecha_salida], [salario], [estado], [id_depto], [tipo_salida], [estado_indem], [id_tipo_contrato]) VALUES (10, N'Roberto', N'Gutiérrez', N'Desarrollador', CAST(N'2015-01-01' AS Date), CAST(N'1900-01-01' AS Date), CAST(2000 AS Decimal(10, 0)), N'A', 1, N'R', N'P', 1)
+GO
+INSERT [dbo].[empleados] ([id_empleado], [nombres], [apellidos], [cargo], [fecha_ingreso], [fecha_salida], [salario], [estado], [id_depto], [tipo_salida], [estado_indem], [id_tipo_contrato]) VALUES (11, N'Roberto', N'Pruebas', N's', CAST(N'2023-11-16' AS Date), CAST(N'1900-01-01' AS Date), CAST(500 AS Decimal(10, 0)), N'A', 1, N'R', N'P', 1)
 GO
 SET IDENTITY_INSERT [dbo].[empleados] OFF
 GO
 SET IDENTITY_INSERT [dbo].[HORAS_EXTRA] ON 
 GO
-INSERT [dbo].[HORAS_EXTRA] ([ID], [FECHA], [TIPO], [CANTIDAD], [ID_EMPLEADO]) VALUES (1, CAST(N'2023-11-02' AS Date), N'E', 10, 6)
+INSERT [dbo].[HORAS_EXTRA] ([ID], [FECHA], [TIPO], [CANTIDAD], [ID_EMPLEADO]) VALUES (1, CAST(N'2023-11-03' AS Date), N'E', 10, 6)
+GO
+INSERT [dbo].[HORAS_EXTRA] ([ID], [FECHA], [TIPO], [CANTIDAD], [ID_EMPLEADO]) VALUES (2, CAST(N'2023-11-02' AS Date), N'O', 2, 6)
 GO
 SET IDENTITY_INSERT [dbo].[HORAS_EXTRA] OFF
 GO
@@ -841,7 +849,33 @@ INSERT [dbo].[usuarios] ([ID_USUARIO], [NOMBRES], [APELLIDOS], [EMAIL], [PASSWOR
 GO
 SET IDENTITY_INSERT [dbo].[usuarios] OFF
 GO
-/****** Object:  Index [UQ_ID_ROL_ID_MODULO]    Script Date: 11/2/2023 11:26:11 PM ******/
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [idx_empleados_estado]    Script Date: 11/4/2023 3:56:10 PM ******/
+CREATE NONCLUSTERED INDEX [idx_empleados_estado] ON [dbo].[empleados]
+(
+	[estado] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+/****** Object:  Index [idx_empleados_fecha_ingreso]    Script Date: 11/4/2023 3:56:10 PM ******/
+CREATE NONCLUSTERED INDEX [idx_empleados_fecha_ingreso] ON [dbo].[empleados]
+(
+	[fecha_ingreso] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+/****** Object:  Index [idx_empleados_id_depto]    Script Date: 11/4/2023 3:56:10 PM ******/
+CREATE NONCLUSTERED INDEX [idx_empleados_id_depto] ON [dbo].[empleados]
+(
+	[id_depto] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+/****** Object:  Index [idx_empleados_salario]    Script Date: 11/4/2023 3:56:10 PM ******/
+CREATE NONCLUSTERED INDEX [idx_empleados_salario] ON [dbo].[empleados]
+(
+	[salario] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+/****** Object:  Index [UQ_ID_ROL_ID_MODULO]    Script Date: 11/4/2023 3:56:10 PM ******/
 ALTER TABLE [dbo].[ROLES_MODULO] ADD  CONSTRAINT [UQ_ID_ROL_ID_MODULO] UNIQUE NONCLUSTERED 
 (
 	[ID_ROL] ASC,
@@ -931,7 +965,47 @@ REFERENCES [dbo].[roles] ([ID_ROL])
 GO
 ALTER TABLE [dbo].[usuarios] CHECK CONSTRAINT [FK_usuarios_roles]
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DE_HORAEX]    Script Date: 11/2/2023 11:26:11 PM ******/
+ALTER TABLE [dbo].[AUSENCIAS]  WITH CHECK ADD  CONSTRAINT [CHK_TIPO_AUSENCIA] CHECK  (([tipo]='P' OR [tipo]='I' OR [tipo]='A'))
+GO
+ALTER TABLE [dbo].[AUSENCIAS] CHECK CONSTRAINT [CHK_TIPO_AUSENCIA]
+GO
+ALTER TABLE [dbo].[empleados]  WITH CHECK ADD  CONSTRAINT [CHK_EMPLEADO_ESTADO] CHECK  (([ESTADO]='I' OR [ESTADO]='A'))
+GO
+ALTER TABLE [dbo].[empleados] CHECK CONSTRAINT [CHK_EMPLEADO_ESTADO]
+GO
+ALTER TABLE [dbo].[empleados]  WITH CHECK ADD  CONSTRAINT [CHK_EMPLEADO_ESTADO_INDEM] CHECK  (([ESTADO_INDEM]='P' OR [ESTADO_INDEM]='L'))
+GO
+ALTER TABLE [dbo].[empleados] CHECK CONSTRAINT [CHK_EMPLEADO_ESTADO_INDEM]
+GO
+ALTER TABLE [dbo].[empleados]  WITH CHECK ADD  CONSTRAINT [CHK_EMPLEADO_SALARIO] CHECK  (([salario]>=(365)))
+GO
+ALTER TABLE [dbo].[empleados] CHECK CONSTRAINT [CHK_EMPLEADO_SALARIO]
+GO
+ALTER TABLE [dbo].[empleados]  WITH CHECK ADD  CONSTRAINT [CHK_EMPLEADO_TIPO_RENUNCIA] CHECK  (([TIPO_SALIDA]='R' OR [TIPO_SALIDA]='D'))
+GO
+ALTER TABLE [dbo].[empleados] CHECK CONSTRAINT [CHK_EMPLEADO_TIPO_RENUNCIA]
+GO
+ALTER TABLE [dbo].[HORAS_EXTRA]  WITH CHECK ADD  CONSTRAINT [CHK_DIURNA] CHECK  (([tipo]<>'O' OR [cantidad]<=(13)))
+GO
+ALTER TABLE [dbo].[HORAS_EXTRA] CHECK CONSTRAINT [CHK_DIURNA]
+GO
+ALTER TABLE [dbo].[HORAS_EXTRA]  WITH CHECK ADD  CONSTRAINT [CHK_NOCTURNA] CHECK  (([tipo]<>'E' OR [cantidad]<=(11)))
+GO
+ALTER TABLE [dbo].[HORAS_EXTRA] CHECK CONSTRAINT [CHK_NOCTURNA]
+GO
+ALTER TABLE [dbo].[HORAS_EXTRA]  WITH CHECK ADD  CONSTRAINT [CHK_Tipo_hora] CHECK  (([TIPO]='E' OR [TIPO]='O'))
+GO
+ALTER TABLE [dbo].[HORAS_EXTRA] CHECK CONSTRAINT [CHK_Tipo_hora]
+GO
+ALTER TABLE [dbo].[PRESTACIONES]  WITH CHECK ADD  CONSTRAINT [CHK_PRESTACION_ESTADO] CHECK  (([estado]='I' OR [estado]='A'))
+GO
+ALTER TABLE [dbo].[PRESTACIONES] CHECK CONSTRAINT [CHK_PRESTACION_ESTADO]
+GO
+ALTER TABLE [dbo].[PRESTACIONES]  WITH CHECK ADD  CONSTRAINT [CHK_TECHO_SUPERIOR_A_INFERIOR] CHECK  (([techo_superior]>[techo_inferior]))
+GO
+ALTER TABLE [dbo].[PRESTACIONES] CHECK CONSTRAINT [CHK_TECHO_SUPERIOR_A_INFERIOR]
+GO
+/****** Object:  StoredProcedure [dbo].[PROC_DE_HORAEX]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -940,7 +1014,7 @@ create proc [dbo].[PROC_DE_HORAEX](@id_horaEx int)
 AS
 	DELETE from HORAS_EXTRA  Where ID =  @id_horaEx
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DEL_AUSENCIAS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_DEL_AUSENCIAS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -957,7 +1031,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DEL_DEPARTAMENTO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_DEL_DEPARTAMENTO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -970,7 +1044,7 @@ BEGIN
         WHERE [id_depto] = @id_depto;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DEL_EMPLEADO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_DEL_EMPLEADO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -983,7 +1057,7 @@ BEGIN
         WHERE [id_empleado] = @id_empleado;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DEL_PERMISO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_DEL_PERMISO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -996,7 +1070,7 @@ BEGIN
         WHERE [id] = @id_permiso;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DEL_PRESTACION]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_DEL_PRESTACION]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1009,7 +1083,7 @@ BEGIN
         WHERE [id_prestacion] = @id_prestacion;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DEL_ROL]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_DEL_ROL]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1025,7 +1099,7 @@ BEGIN
         WHERE [ID_ROL] = @id_rol;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_DEL_USUARIO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_DEL_USUARIO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1041,7 +1115,7 @@ BEGIN
         WHERE [ID_USUARIO] = @id_usuario;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_AUSENCIAS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_AUSENCIAS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1070,7 +1144,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_DEPARTAMENTO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_DEPARTAMENTO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1094,10 +1168,8 @@ BEGIN
 		([nombre], [estado]) 
         VALUES (@nombre, @estado);
 END;
-
-EXEC PROC_INS_UPD_DEPARTAMENTO NULL,'otro15','A'
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_EMPLEADO]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_EMPLEADO]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1139,7 +1211,7 @@ BEGIN
         VALUES (@nombres, @apellidos, @cargo, @fecha_ingreso, @fecha_salida, @salario, @estado, @id_depto, @tipo_salida, @estado_indem, @id_tipo_contrato);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_HORAEXTRA]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_HORAEXTRA]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1159,7 +1231,7 @@ AS
         (FECHA, TIPO, CANTIDAD, ID_EMPLEADO)
         VALUES (@fecha, @tipo, @cantidad, @id_empleado)
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_PERMISOS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_PERMISOS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1192,7 +1264,7 @@ BEGIN
         VALUES (@id_rol, @id_modulo, @estado_c, @estado_u, @estado_d, @estado_r);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_PRESTACION]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_PRESTACION]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1224,7 +1296,7 @@ BEGIN
         VALUES (@nombre, @porcentaje, @monto, @techo_inferior, @techo_superior, @estado);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_ROLES]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_ROLES]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1248,7 +1320,7 @@ BEGIN
         VALUES (@nombre, @estado);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_USUARIOS]    Script Date: 11/2/2023 11:26:11 PM ******/
+/****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_USUARIOS]    Script Date: 11/4/2023 3:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
