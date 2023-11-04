@@ -1095,7 +1095,6 @@ BEGIN
         VALUES (@nombre, @estado);
 END;
 
-EXEC PROC_INS_UPD_DEPARTAMENTO NULL,'otro15','A'
 GO
 /****** Object:  StoredProcedure [dbo].[PROC_INS_UPD_EMPLEADO]    Script Date: 11/2/2023 11:26:11 PM ******/
 SET ANSI_NULLS ON

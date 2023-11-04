@@ -5,10 +5,10 @@
 
     $query = "";
     $salida = array();
-    $query = "SELECT rm.id as id, r.nombre as Rol, m.nombre as Modulo, CASE rm.PUEDE_CONSULTAR WHEN 'S' THEN 'Sí' ELSE 'NO' END as PUEDE_CONSULTAR,
-                CASE rm.PUEDE_INSERTAR WHEN 'S' THEN 'Sí' ELSE 'NO' END as PUEDE_INSERTAR,
-                CASE rm.PUEDE_ACTUALIZAR WHEN 'S' THEN 'Sí' ELSE 'NO' END as PUEDE_ACTUALIZAR,
-                CASE rm.PUEDE_ELIMINAR WHEN 'S' THEN 'Sí' ELSE 'NO' END as PUEDE_ELIMINAR
+    $query = "SELECT rm.id as id, r.nombre as Rol, m.nombre as Modulo, CASE rm.PUEDE_CONSULTAR WHEN 'S' THEN 'Sí' ELSE 'No' END as PUEDE_CONSULTAR,
+                CASE rm.PUEDE_INSERTAR WHEN 'S' THEN 'Sí' ELSE 'No' END as PUEDE_INSERTAR,
+                CASE rm.PUEDE_ACTUALIZAR WHEN 'S' THEN 'Sí' ELSE 'No' END as PUEDE_ACTUALIZAR,
+                CASE rm.PUEDE_ELIMINAR WHEN 'S' THEN 'Sí' ELSE 'No' END as PUEDE_ELIMINAR
                 FROM roles r
                 INNER JOIN ROLES_MODULO rm ON rm.ID_ROL=r.ID_ROL
                 INNER JOIN MODULOS m on rm.ID_MODULO=m.id";
