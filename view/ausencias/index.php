@@ -56,7 +56,7 @@
                     <br />-->
 
                     <label for="id_rol">Seleccione el tipo:&nbsp;</label>
-                    <select class="form-select" name="tipo" id="tipo">
+                    <select class="form-select" name="tipo" id="tipo" required>
                         <option value="0">Elija un tipo...</option>
                         <option value="A">Ausencia</option>
                         <option value="I">Incapacidad</option>
@@ -65,7 +65,7 @@
                     <br />
 
                     <label for="id_empleado">Seleccione el empleado:&nbsp;</label>
-                    <select class="form-select" name="id_empleado" id="id_empleado">
+                    <select class="form-select" name="id_empleado" id="id_empleado" required>
                         <option value="0">Elija un empleado...</option>
                         <?php 
                         include_once("../../model/conexion.php");
