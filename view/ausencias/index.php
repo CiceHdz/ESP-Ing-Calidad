@@ -86,7 +86,7 @@
                     <br />
 
                     <label for="comentario">Ingrese un comentario</label>
-                    <input type="text" name="comentario" id="comentario" class="form-control">
+                    <input type="text" name="comentario" id="comentario" maxlength="500" class="form-control">
                     <br />
 
                     <!--<label for="imagen">Seleccione una imagen</label>
