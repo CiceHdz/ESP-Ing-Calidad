@@ -1,6 +1,7 @@
 <?php
 
 $k = "SQLSTATE[23000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Instrucción UPDATE en conflicto con la restricción CHECK 'CHK_NOCTURNA'. El conflicto ha aparecido en la base de datos 'rrhh', tabla 'dbo.HORAS_EXTRA'.";
+$w = "SQLSTATE[23000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Instrucción INSERT en conflicto con la restricción CHECK 'CHK_NOCTURNA'. El conflicto ha aparecido en la base de datos 'rrhh', tabla 'dbo.HORAS_EXTRA'.";
 
 if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -33,6 +34,9 @@ try{
     }
 }catch (Exception $e){
     if($e -> getMessage() == $k){
+        echo 'El numero de horas extras nocturnas no debe ser mayor a 11 horas';
+    }
+    else if($e -> getMessage() == $w){
         echo 'El numero de horas extras nocturnas no debe ser mayor a 11 horas';
     }
     else{
