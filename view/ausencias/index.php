@@ -256,7 +256,7 @@
                     return false;
                 }
             }	*/
-		    if(fecha != '' && id_empleado != '' && tipo != '')
+		    if(id_empleado != '' && tipo != '')
                 {
                     $.ajax({
                         url:"../../controller/ausencias/crear.php",

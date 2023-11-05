@@ -365,9 +365,9 @@ foreach($resultado as $fila){
         $pdf->Cell(50,5,convertTexto("$" . number_format($indemnizacion, 2)), 0, 0, 'R');
         $pdf->Ln();
 
-        $pdf->Cell(50,5,convertTexto('Aguinaldo:'), 0, 0, 'L');
-        $pdf->Cell(50,5,convertTexto("$" . number_format($aguinaldo, 2)), 0, 0, 'R');
-        $pdf->Ln();
+        //$pdf->Cell(50,5,convertTexto('Aguinaldo:'), 0, 0, 'L');
+        //$pdf->Cell(50,5,convertTexto("$" . number_format($aguinaldo, 2)), 0, 0, 'R');
+        //$pdf->Ln();
 
         $pdf->Ln(10);
 
