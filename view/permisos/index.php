@@ -285,7 +285,7 @@
             var estado_u = $('#estado_u').val();
             var estado_d = $('#estado_d').val();
             
-		    if(id_rol != '' && id_modulo != '' && estado_r != '' && estado_c != '' && estado_u != '' && estado_d != '')
+		    if(id_rol != 0 && id_modulo != 0 && estado_r != '' && estado_c != '' && estado_u != '' && estado_d != '')
                 {
                     $.ajax({
                         url:"../../controller/permisos/crear.php",

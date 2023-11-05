@@ -30,24 +30,8 @@ try{
 
 } catch(Exception $e){
     //echo $e -> getMessage();
-    $query = "SELECT r.nombre as rol, m.nombre as modulo
-                FROM roles r
-                    INNER JOIN ROLES_MODULO rm ON rm.ID_ROL=r.ID_ROL
-                    INNER JOIN MODULOS m on rm.ID_MODULO=m.id
-                WHERE rm.id = 1";
-
-    $stmt = $conexion->prepare($query);
-    $stmt->execute();
-    $resultado = $stmt->fetchAll();
-    $datos = array();
-    $filtered_rows = $stmt->rowCount();
-    foreach($resultado as $fila){
-        $nombreRol = $fila["rol"];
-        $nombreModulo = $fila["modulo"];
-
-        echo "El permiso ya existe para el rol '".$nombreRol."' y modulo '".$nombreModulo."'. Asigne un permiso para un rol y modulo diferente.";
-        //echo "<option value='".$id_rol."' >".$nombre."</option>";
-    }
+    echo "Permiso existente! Asigne un permiso para un rol y módulo diferente.";
+    
 }
 
 
